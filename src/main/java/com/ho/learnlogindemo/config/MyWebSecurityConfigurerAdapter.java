@@ -28,7 +28,7 @@ public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter
     private UserDetailsServiceImpl userDetailsService;
     @Bean
     AccessDeniedHandler getAccessDeniedHandler() {
-        return new AuthenticationAccessDeniedHandler();
+        return new AccessDeniedHandlerImpl();
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -113,10 +113,10 @@ public class MyWebSecurityConfigurerAdapter extends WebSecurityConfigurerAdapter
                     .logoutSuccessUrl("/logout_success")
                     .permitAll()
                     .and()
-                .sessionManagement()
+//                .sessionManagement()
                     //配置登录session过期后跳转到的地址
-                    .invalidSessionUrl("/session_invalid")
-                    .and()
+//                    .invalidSessionUrl("/session_invalid")
+//                    .and()
                 .csrf()
                     .disable()
                     .exceptionHandling()
