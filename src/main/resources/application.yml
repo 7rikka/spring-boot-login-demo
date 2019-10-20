@@ -1,0 +1,9 @@
+server:
+  port: 9000
+  servlet:
+    session:
+#      登录session过期时间，默认30分钟
+      timeout: 10
+logging:
+  pattern:
+    console: "[%logger] ---- %msg%n"
